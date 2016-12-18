@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lambda-bank-account-balances-get/lib/bank-account-balances-transformation.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">lambda-bank-account-balances-get/lib</a> bank-account-balances-transformation.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>75/75</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">69.05% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>29/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>75/75</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+const log4js = require('log4js');
+const bankAccountsBalancesConfig = require('./bank-account-balances-config.json');
+const commonFunctions = require('./common-functions.js');
+const bankAccountBalancesTransformationFunction = require('./bank-account-balances-transformation-function.js');
+&nbsp;
+const logger = log4js.getLogger('bank-account-balances-transformation.js');
+&nbsp;
+exports.parseResponse = function (contractJsonData, errorConfig) {
+	logger.info('Start parseResponse()');
+	try {
+		let transformedJsonResponse = {};
+		let bankSavingsAccount = {};
+		let bankSavingsAccountsArray = [];
+		let bankInvestmentAccount = {};
+		let bankInvestmentAccountArray = [];
+		let bankSavingProducts = bankAccountsBalancesConfig.bankSavingsProducts;
+		let bankInvestmentProducts = bankAccountsBalancesConfig.bankInvestmentProducts;
+		if (contractJsonData.listContractResponse.PROCES.STATUS === '00000') {
+			global.PARTIJ = contractJsonData.listContractResponse.DOSSIER.PARTIJ;
+			let jsonData = [];
+			if (contractJsonData.listContractResponse.DOSSIER.CONTRACT_POLIS.length &gt; 0) {
+				jsonData = contractJsonData.listContractResponse.DOSSIER.CONTRACT_POLIS;
+			} else {
+				jsonData[0] = contractJsonData.listContractResponse.DOSSIER.CONTRACT_POLIS;
+			}
+&nbsp;
+			let bankSavingsAccountIndex = 0;
+			let bankInvestmentsAccountIndex = 0;
+			for (let i = 0; i &lt; jsonData.length; i++) {
+				if (bankSavingProducts.indexOf(jsonData[i].PRODUCC) &gt;= 0) {
+					let getIDBSA = commonFunctions.createID(jsonData[i], jsonData[i].PRODUCC);
+					if (getIDBSA) {
+						bankSavingsAccount.id = commonFunctions.encrypt(getIDBSA);
+						bankSavingsAccount.number = jsonData[i].NUMMER ? jsonData[i].NUMMER : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+						bankSavingsAccount.iban = jsonData[i]._AE_FIN_CONTRACT.IBAN ? jsonData[i]._AE_FIN_CONTRACT.IBAN : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+						bankSavingsAccount.balance = jsonData[i]._AE_WAARDE_TOTAAL ? parseFloat(jsonData[i]._AE_WAARDE_TOTAAL).toFixed(2) : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+						if (typeof jsonData[i]._AE_FIN_CONTRACT._AE_DEPOT !== 'undefined') {
+							let depotArray = [];
+							let depot = {};
+							let depositAccountArray = [];
+							if (jsonData[i]._AE_FIN_CONTRACT._AE_DEPOT.length &gt; 0) {
+								depotArray = jsonData[i]._AE_FIN_CONTRACT._AE_DEPOT;
+							} else {
+								depotArray[0] = jsonData[i]._AE_FIN_CONTRACT._AE_DEPOT;
+							}
+							for (let nrDepots = 0; nrDepots &lt; depotArray.length; nrDepots++) {
+								let getIDDepot = commonFunctions.createID(jsonData[i], depotArray[nrDepots]._AE_PRODUCT_DEF._AE_CATEGORIECD + 'D');
+								<span class="missing-if-branch" title="else path not taken" >E</span>if (getIDDepot) {
+									depot.number = depotArray[nrDepots]._AE_MODULENUMMER ? depotArray[nrDepots]._AE_MODULENUMMER : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+									depot.id = commonFunctions.encrypt(getIDDepot);
+									depositAccountArray[nrDepots] = depot;
+									depot = {};
+								}
+							}
+							bankSavingsAccount.depositAccount = depositAccountArray;
+						}
+						bankSavingsAccountsArray[bankSavingsAccountIndex] = bankSavingsAccount;
+						bankSavingsAccountIndex++;
+						bankSavingsAccount = {};
+					}
+				} else <span class="missing-if-branch" title="else path not taken" >E</span>if (bankInvestmentProducts.indexOf(jsonData[i].PRODUCC) &gt;= 0) {
+					let getIDBIA = commonFunctions.createID(jsonData[i], jsonData[i].PRODUCC);
+					<span class="missing-if-branch" title="else path not taken" >E</span>if (getIDBIA) {
+						bankInvestmentAccount.id = commonFunctions.encrypt(getIDBIA);
+						<span class="missing-if-branch" title="else path not taken" >E</span>if (typeof jsonData[i]._AE_FIN_CONTRACT._AE_DEPOT !== 'undefined') {
+							let getIDSAI = commonFunctions.createID(jsonData[i], jsonData[i]._AE_FIN_CONTRACT._AE_DEPOT._AE_PRODUCT_DEF._AE_CATEGORIECD + 'E');
+							<span class="missing-if-branch" title="else path not taken" >E</span>if (getIDSAI) {
+								bankInvestmentAccount.securitiesAccountId = commonFunctions.encrypt(getIDSAI);
+							}
+						}
+						bankInvestmentAccount.number = jsonData[i].NUMMER ? jsonData[i].NUMMER : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+						bankInvestmentAccount.iban = jsonData[i]._AE_FIN_CONTRACT.IBAN ? jsonData[i]._AE_FIN_CONTRACT.IBAN : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+						bankInvestmentAccount.balance = jsonData[i]._AE_WAARDE_TOTAAL ? parseFloat(jsonData[i]._AE_WAARDE_TOTAAL).toFixed(2) : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+						bankInvestmentAccountArray[bankInvestmentsAccountIndex] = bankInvestmentAccount;
+						bankInvestmentsAccountIndex++;
+						bankInvestmentAccount = {};
+					}
+				}
+			}
+			<span class="missing-if-branch" title="else path not taken" >E</span>if (bankSavingsAccountsArray.length &gt; 0) {
+				transformedJsonResponse.savingsAccounts = bankSavingsAccountsArray;
+			}
+			if (bankInvestmentAccountArray.length &gt; 0) {
+				transformedJsonResponse.investmentAccounts = bankInvestmentAccountArray;
+			}
+			return transformedJsonResponse;
+		}
+		// Else - fall through
+		logger.error('Status Error!');
+		let statusCode;
+		if (contractJsonData.listContractResponse.PROCES.length &gt; 0) {
+			statusCode = contractJsonData.listContractResponse.PROCES[0].STATUS;
+		} else {
+			statusCode = contractJsonData.listContractResponse.PROCES.STATUS;
+		}
+		return bankAccountBalancesTransformationFunction.returnError(statusCode, errorConfig);
+	} catch (err) {
+		logger.error(`Error! ${err}`);
+		return {error: true, message: 'Internal Server Error', statuscode: 500, code: `${errorConfig.lambdaCode}-${errorConfig.areas.lambda}-500-003`};
+	}
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 19 2016 02:53:41 GMT+0530 (IST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+image: aegon/na
+pipelines:
+  default:
+    - step:
+      name: Install node packages
+      script:
+        - npm install
+    - step:
+      name: Run unit tests
+      script:
+        - npm test
+    - step:
+      name: Zip the Lambda functions
+      script:
+        - mkdir lambda-functions
+        - FILE_NAME=lambda-functions/${FILE_NAME}.zip
+        - FILENAME=${FILE_NAME} npm run zip

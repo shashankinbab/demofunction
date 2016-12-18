@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lambda-bank-account-balances-get/lib/common-functions.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">lambda-bank-account-balances-get/lib</a> common-functions.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">56.25% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>9/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/25</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+const crypto = require('crypto');
+const log4js = require('log4js');
+&nbsp;
+const logger = log4js.getLogger('common-functions.js');
+&nbsp;
+exports.createID = function (JsonData, productId) {
+	<span class="missing-if-branch" title="if path not taken" >I</span>if (JsonData._AE_PARTIJCONTRACTROL.length &gt; 0) {
+<span class="cstat-no" title="statement not covered" >		for (let partijcontractrol in JsonData._AE_PARTIJCONTRACTROL) {</span>
+<span class="cstat-no" title="statement not covered" >			if (JsonData._AE_PARTIJCONTRACTROL[partijcontractrol].ENTITEI === 'RF') {</span>
+<span class="cstat-no" title="statement not covered" >				return this.getRelnum(JsonData._AE_PARTIJCONTRACTROL[partijcontractrol]._AE_PARTIJ_VOLGNUM) +</span>
+					'#' + productId + '#' + (JsonData.VOLGNUM ? JsonData.VOLGNUM : null);
+			}
+		}
+	} else if (JsonData._AE_PARTIJCONTRACTROL.ENTITEI === 'RF') {
+		return this.getRelnum(JsonData._AE_PARTIJCONTRACTROL._AE_PARTIJ_VOLGNUM) +
+			'#' + productId + '#' + (JsonData.VOLGNUM ? JsonData.VOLGNUM : <span class="branch-1 cbranch-no" title="branch not covered" >null)</span>;
+	}
+	return false;
+};
+&nbsp;
+exports.getRelnum = function (volgnum) {
+	logger.info('Start getRelnum()');
+	if (global.PARTIJ.length &gt; 0) {
+		for (let volindex in global.PARTIJ) {
+			if (volgnum === global.PARTIJ[volindex].VOLGNUM) {
+				return global.PARTIJ[volindex].RELNUM;
+			}
+		}
+	}
+	<span class="missing-if-branch" title="else path not taken" >E</span>if (volgnum === global.PARTIJ.VOLGNUM) {
+		return global.PARTIJ.RELNUM;
+	}
+};
+&nbsp;
+exports.encrypt = function (id) {
+	logger.info('Start encrypt()');
+	const cipher = crypto.createCipher('aes-256-ctr', 'AEGON@APPIC@APP');
+	let crypted = cipher.update(id, 'utf8', 'hex');
+	crypted += cipher.final('hex');
+	return crypted;
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 19 2016 02:53:41 GMT+0530 (IST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

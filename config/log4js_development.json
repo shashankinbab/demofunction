@@ -1,0 +1,15 @@
+{
+  "appenders": [
+    {
+      "type": "logLevelFilter",
+      "level": "INFO",
+      "appender": {
+        "type": "console",
+        "layout": {
+          "type": "pattern",
+          "pattern": "[%d] [%[%5.5p%]] [%c] - %m%n"
+        }
+      }
+    }
+  ]
+}
